@@ -34,3 +34,15 @@ var a = 2;
 var a;
 console.log(a);
 a = 2;
+
+函数声明会提升，函数表达式则不会
+bar();  // typeError   bar()由于对undefined值进行函数调用而导致非法操作，因此抛出typeError异常
+var bar = function foo(){
+    console.log('1');
+}
+
+foo();  // ReferenceError:
+var bar = function foo(){
+    console.log('1');
+}
+

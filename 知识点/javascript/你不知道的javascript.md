@@ -46,3 +46,16 @@ var bar = function foo(){
     console.log('1');
 }
 
+4.闭包
+
+function foo(){
+    var a = 2;
+    function bar(){
+        console.log(a);
+    };
+    return bar;
+}
+var baz = foo();
+baz();
+
+foo()执行后，foo整个内部作用域不会被销毁。原因是bar还在引用着foo的内部作用域。这个引用叫闭包

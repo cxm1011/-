@@ -131,3 +131,26 @@ console.log(arr.length);  // 4
 // 给数组添加属性，属性名是个数字字符串，它会变为数字下标，同时改变数组的长度
 arr['4'] = 'arr4';
 console.log(arr.length);   // 5
+
+
+8.属性描述符（propertyDescriptor.js）
+
+var myObject = {
+    a: 2
+}
+console.log(Object.getOwnPropertyDescriptor(myObject,"a"));
+// { value: 2, writable: true, enumerable: true, configurable: true }
+设置属性:
+Object.defineProperty(myObject,"a",{
+
+})
+writable: 决定是否可以修改属性的值
+configurable: 为true时才可以使用defineProperty()方法来修改属性描述符
+enumerable: 控制对象是否可以出现在属性的枚举中
+
+9.判断一个属性是否在对象中
+1） “a” in myObject
+2) myObject.hasOwnProperty('a')
+区别： in操作符会检查属性是否在对象及其prototype原型链中，相比之下，hasOwnProperty()只会检查属性是否在myObject中
+in 操作符是用来检查属性名是否存在，所以  4 in  [2,4,6] 返回的是false.因为该数组中的属性名只有0，1，2
+

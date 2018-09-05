@@ -154,3 +154,11 @@ enumerable: 控制对象是否可以出现在属性的枚举中
 区别： in操作符会检查属性是否在对象及其prototype原型链中，相比之下，hasOwnProperty()只会检查属性是否在myObject中
 in 操作符是用来检查属性名是否存在，所以  4 in  [2,4,6] 返回的是false.因为该数组中的属性名只有0，1，2
 
+Object.keys()  会返回一个数组,包含所有可枚举属性
+Object.getOwnPropertyNames()  会返回一个数组，包含所有属性，无论它们是否可枚举
+
+10.for in循环(详见fooIn.js)
+forEach : 全部遍历
+every : 返回false停止
+some: 返回true停止
+

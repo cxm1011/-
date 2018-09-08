@@ -162,3 +162,34 @@ forEach : 全部遍历
 every : 返回false停止
 some: 返回true停止
 
+11.原型
+1）原型继承
+let anothderObj = {
+    a: 2
+}
+
+let myObj = Object.create(anothderObj);
+console.log(myObj.a);  // 找原型的属性
+myObj.a++;  // 不会修改原型上的属性
+console.log(myObj.a)  // 3
+console.log(anothderObj.a) //2 
+
+2）new Foo()
+function Foo() {
+    // ....
+}
+
+let a = new Foo(); // new 中有一步即将a内部的prototype链接到Foo.prototype所指向的对象
+
+Object.getPropertyOf(a) === Foo.prototype; // true
+
+3）构造函数
+函数本身不是构造函数，但是当且仅当使用new时，函数调用会变成构造函数调用
+function Foo() {
+    // ....
+}
+
+Foo.prototype.constructor === Foo; // true
+let a = new Foo(); 
+a.constructor === Foo // true
+

@@ -1,13 +1,16 @@
 #生命周期阶段
-- 首次渲染
-constructor
-componentWillMount
+- 首次渲染(只调用一次)
+constructor   1)初始化state  2)绑定成员函数的this环境
+componentWillMount  将要装载时候调用，componentWillMount中做的事都可以在constructor中去做。存在的目的主要是为了和                           componentDidMount对称                         
 render
-componentDidMount
+componentDidMount  组件挂载后调用,可以在该函数中进行请求
+要等到所有组件的render()函数调用完成才调用各个组件的componentDidMount函数。因为render函数本省并不往
+DOM树上渲染或者装载内容，它只是返回一个JSX表示的对象，然后由React库来根据返回的对象决定如何渲染。而React库肯定是要将所有组件
+返回的结果综合起来，才能知道该如何产生对应的DOM修改。
 
 - props更新
-componentWillReceiveProps
-shouldComponentUpdate
+componentWillReceiveProps 当父组件的render函数被调用，render函数中的子组件就会经历更新过程。获取这一次渲染传入的props值
+shouldComponentUpdate  决定一个组件需不需要渲染
 componentWillUpdate
 render
 componentDidUpdate
@@ -19,7 +22,7 @@ render
 componentDidUpdate
 
 - 卸载
-willUnmount
+willUnmount  做一些清理性工作
 
 #总结
 - 当props或者state被修改时，就会引发组件的更新过程

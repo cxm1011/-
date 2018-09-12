@@ -1,0 +1,19 @@
+毕业上海大学，3月入职平安
+开始做java,也接触一些angualr。到9月份后全力做前端。到后来熟悉后开始将常规需求交给外包。
+受团队影响，做了node。后来做了react,时间划分说清楚。
+
+
+
+事件循环
+跨域  iframe postmessage
+promise.race 应用场景
+AMD CMD
+防抖  节流 具体场景
+pureComponent
+
+angular和react比较
+webpack
+redux
+
+单页面应用难点
+具体一个业务场景，说说具体做了哪些分析

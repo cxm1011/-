@@ -10,3 +10,12 @@ resolve: {
         extensions: ['.js', '.jsx', '.json', '.less'],
     },
 则需写上后缀名
+
+3.webpack优化
+体积： dll  压缩外部依赖
+速度： 
+1)对于include，精确指定要处理的目录，可以减少不必要的遍历，从而减少性能损失
+2）Webpack 默认提供的 UglifyJS插件，由于采用单线程压缩，速度颇慢 ；推荐采用 webpack-parallel-uglify-plugin 插件，它可以并行运行 UglifyJS 插件，更加充分而合理的使用 CPU 资源，这可以大大减少的构建时间
+
+4.contenthash chunkhash bij
+https://juejin.im/post/5a4502be6fb9a0450d1162ed

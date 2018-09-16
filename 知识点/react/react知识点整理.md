@@ -53,6 +53,32 @@ url 的改变只能由以下 3 种途径引起：
 2）点击 a 标签；
 3）在 JS 代码中直接修改路由
 
+#redux
+1.基本原则
+1）唯一数据源
+  指应用状态的数据应该只存储在唯一的一个store上
+2）保持状态只读
+  不能直接修改状态，要修改store的状态，必须要通过派发一个action对象完成。store.dispatch
+3）数据改变只能通过纯函数完成
+  纯函数指函数的返回结果必须完全由参数state和action决定，而且不产生任何副作用，也不能修改参数state和action对象
+
+2.store 一些api
+store.subscribe(this.onChange) 监听变化，只要store状态变化，就会调用onChange方法
+store.unsubscribe(this.onChange) 注销监听
+store.dispatch 改变store中的状态唯一方法就是派发action
+store.getState()  获取store中的状态
+
+3.组件context
+由于在开发组件时候，都不知道自己的这个组件会应用于哪个应用中，当然不可能预先知道定义唯一Redux Store的文件位置，所以通过直接引用store是不利于组件复用的。
+Redux提供的context可以让一个树状组件上的所有组件都能访问一个公共的对象。不过上级组件要宣称自己支持context，并提供一个函数
+返回代表context的对象。然后该上级组件的所有子孙组件只要宣称自己需要这个context,就可以通过this.context访问到共同的环境对象
+
+
+#容器组件和傻瓜组件
+傻瓜组件不需要状态，也就是说傻瓜组件只需要根据props来渲染结果，不需要state
+容器组件管理状态，负责和redux store打交道
+
+
 
 
 

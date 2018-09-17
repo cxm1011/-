@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div style="height:10px;width:200px;float:left">左边固定</div>
+        <div style="height:10px;margin-left: 200px;text-align: center">右边自适应</div>
+    </div>
+    <br/><br/>
+    <div style="position: relative">
+        <div style="height:10px;width:200px;position: absolute">左边固定</div>
+        <div style="height:10px;margin-left: 200px;text-align: center">右边自适应</div>
+    </div>
+    <br/><br/>
+    <div style="display: flex;">
+        <div style="height:10px;width:200px;flex-basis: 100px; ">左边固定</div>
+        <div style="height:10px;text-align: center;margin-left: 100px;flex-basis:calc(100% - 100px);">右边自适应</div>
+    </div>
+</body>
+</html>

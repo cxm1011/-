@@ -29,8 +29,9 @@ getValue.myCall(a);
 Function.prototype.myApply = function(context){
     var context = context || window;
     context.fn = this;
-    let result;
+    // let result;
     // arguments[1]有可能是undefined.对undefined解构赋值会报错。所以要加上判断
+    // 首先得拿到数组中的所有值。与call不同
     if(arguments[1]){
         console.log(arguments[1]);
         result = context.fn(...arguments[1]);
@@ -40,7 +41,7 @@ Function.prototype.myApply = function(context){
     delete context.fn;
     return result;
 }
-getValue.myApply(a);
+getValue.myApply(a,['a']);
 
 Function.prototype.myBind = function(context){
     if(typeof this !== 'function'){

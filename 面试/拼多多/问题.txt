@@ -2,5 +2,5 @@
 2.webpack打包优化
 3.promise顺序调用，第一步获取列表id，第二步根据id获取list
 4.bind实现，this指向出现问题，使用bind函数后如何正确执行
-快排实现
+5.快排实现
 

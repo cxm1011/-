@@ -17,6 +17,8 @@ Function.prototype.myBind = function (context) {
     if (typeof this !== 'function') {
       throw new TypeError('Error')
     }
+    console.log('this');
+    console.log(this);
     var _this = this;
     console.log('arguments');
     // arguments是个对象，所以使用...arguments解构，变为参数序列，[...arguments]构成数组,可以使用slice方法

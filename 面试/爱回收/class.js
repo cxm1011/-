@@ -18,4 +18,4 @@ class B extends A {
 }
 
 var b = new B();
-console.log(b);
+console.log(b);  //B { a: 1, b: 2 }

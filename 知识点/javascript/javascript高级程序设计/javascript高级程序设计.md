@@ -77,3 +77,72 @@ in 操作符会在通 过对象能够访问给定属性时返回 true，无论�
     function hasPrototypeProperty(object, name){
         return !object.hasOwnProperty(name) && (name in object);
 }
+
+5.原型的动态性
+1）创建实例再修改原型，也可以访问到修改原型后的方法
+var friend = new Person();
+Person.prototype.sayHi = function(){
+    alert("hi");
+};
+friend.sayHi(); //"hi"(没有问题!)
+
+
+2）但是重写整个原型对象，则不行。图6-3很重要
+function Person(){
+}
+var friend = new Person();
+Person.prototype = {
+    constructor: Person,
+    name : "Nicholas",
+    age : 29,
+    job : "Software Engineer",
+    sayName : function () {
+        alert(this.name);
+    }
+};
+friend.sayName();   //error
+
+6.原型对象的问题
+最大的问题是由其共享的本性所导致的。
+对于包含引用类型值的属性来说，问题就比较突出了。eg:
+function Person(){
+}
+Person.prototype = {
+    constructor: Person,
+    name : "Nicholas",
+    age : 29,
+    job : "Software Engineer",
+    friends : ["Shelby", "Court"],
+    sayName : function () {
+        alert(this.name);
+} };
+var person1 = new Person();
+var person2 = new Person();
+person1.friends.push("Van");
+alert(person1.friends);    //"Shelby,Court,Van"
+alert(person2.friends);    //"Shelby,Court,Van"
+alert(person1.friends === person2.friends);  //true
+
+//组合使用构造函数模式和原型模式
+//构造函数模式用于定义实 例属性，而原型模式用于定义方法和共享的属性。结果，每个实例都会有自己的一份实例属性的副本， 
+//但同时又共享着对方法的引用，最大限度地节省了内存。另外，这种混成模式还支持向构造函数传递参数;可谓是集两种模式之长。
+function Person1(name,age,job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.friends = ['abc','def'];
+}
+
+Person1.prototype = {
+    constructor: Person1,
+    sayName: function(){
+        console.log(this.name);
+    }
+}
+
+var person11 = new Person1('jj',22,'qq');
+var person12 = new Person1('kk',22,'ll');
+console.log(person11.friends);
+console.log(person12.friends);
+console.log(person11.friends === person12.friends);  //false
+console.log(person11.sayName === person12.sayName); //true

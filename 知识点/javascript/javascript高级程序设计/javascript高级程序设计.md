@@ -146,3 +146,44 @@ console.log(person11.friends);
 console.log(person12.friends);
 console.log(person11.friends === person12.friends);  //false
 console.log(person11.sayName === person12.sayName); //true
+
+7.继承
+原型链作为实现继承的主要方法。其基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法
+
+function SuperType(){
+    this.property = true;
+}
+SuperType.prototype.getSuperValue = function(){
+    return this.property;
+}
+
+function SubType(){
+    this.subproperty = false;
+}
+SubType.prototype = new SuperType();  // 实现继承，实现的本质是重写原型对象，代之以一个新类型的实例
+SubType.prototype.getSubValue = function(){
+    return this.subproperty;
+}
+
+var instance = new SubType();
+console.log(instance.getSuperValue());  // true
+实例以及构造函数和原型之间的关系如图 6-4 所示
+
+最终结果就是这样的:instance 指向 SubType 的原型，SubType 的原型又指向 SuperType 的原型
+ instance.constructor 现在指向的 是 SuperType，这是因为原来 SubType.prototype 中的 constructor 被重写了的缘故
+
+7.1 默认的原型
+ 所有函数的默认原型都是 Object 的实例，因此默认原 型都会包含一个内部指针，指向 Object.prototype。这也正是所有自定义类型都会继承 toString()、 valueOf()等默认方法的根本原因
+
+7.2 原型和实例的关系
+instanceof  这个操作符来测试实例与原型链中出现过的构造函数
+alert(instance instanceof Object); //true
+alert(instance instanceof SuperType); //true
+alert(instance instanceof SubType);//true
+
+isPrototypeOf()方法。同样，只要是原型链中出现过的原型，都可以说是该原型链所派生的实例的原型
+alert(Object.prototype.isPrototypeOf(instance));  //true
+alert(SuperType.prototype.isPrototypeOf(instance));  //true
+alert(SubType.prototype.isPrototypeOf(instance));  //true
+
+

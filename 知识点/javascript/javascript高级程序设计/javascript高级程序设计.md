@@ -186,4 +186,82 @@ alert(Object.prototype.isPrototypeOf(instance));  //true
 alert(SuperType.prototype.isPrototypeOf(instance));  //true
 alert(SubType.prototype.isPrototypeOf(instance));  //true
 
+8.原型链的问题
+1)第一个问题
+引用类型值的原型属性会被所有实例共享，因此这也是为什么要在构造函数中，而不是在原型对象中定义属性的原因。在通过原型来实现继承
+时，原型实际上会变成另一个类型的实例。于是，原先的实例属性也就成为了现在的原型属性了。
+//  SubType 的所有实例都会共享这一个 colors 属性。
+function SuperType(){
+    this.colors = ['red','blue','green'];
+}
+function SubType(){
+
+}
+SubType.prototype = new SuperType();
+
+var instance1 = new SubType();
+instance1.colors.push('black');
+console.log(instance1.colors); // [ 'red', 'blue', 'green', 'black' ]
+
+var instance2 = new SubType();
+console.log(instance2.colors); // [ 'red', 'blue', 'green', 'black' ]
+
+2)第二个问题
+在创建子类型的实例时，不能向超类型的构造函数中传递参数。没有办法在不影响所有对象实例的情况下，给超类型的构造函数传递参数
+
+9.解决方法
+借用构造函数
+function SuperType(){
+    this.colors = ['red','blue','green'];
+}
+function SubType(){
+    SuperType.call(this);
+}
+
+var instance1 = new SubType();
+instance1.colors.push('black');
+console.log(instance1.colors); // [ 'red', 'blue', 'green', 'black' ]
+
+var instance2 = new SubType();
+console.log(instance2.colors); // [ 'red', 'blue', 'green']
+// 实际上是在(未来将要)新创建的 SubType 实例的环境下调用了 SuperType 构造函数。 
+// 这样一来，就会在新 SubType 对象上执行 SuperType()函数中定义的所有对象初始化代码。
+//结果， SubType 的每个实例就都会具有自己的 colors 属性的副本了。
+
+构造函数的问题：
+如果仅仅是借用构造函数，那么也将无法避免构造函数模式存在的问题——方法都在构造函数中定 义，因此函数复用就无从谈起了。而且，在超类型的原型中定义的方法，对子类型而言也是不可见的，结 果所有类型都只能使用构造函数模式。
+
+10.组合模式
+
+function SuperType(name){
+    this.name = name;
+    this.colors = ['red','blue','green'];
+}
+
+SuperType.prototype.sayName = function(){
+    console.log(this.name);
+}
+
+function SubType(name,age){
+    SuperType.call(this,name);
+    this.age = age;
+}
+
+SubType.prototype = new SuperType();
+SubType.prototype.construcor = SubType;
+SubType.prototype.sayAge = function(){
+    console.log(this.age);
+}
+
+var instance1 = new SubType('kitty',22);
+instance1.colors.push('black');
+console.log(instance1.colors); // [ 'red', 'blue', 'green', 'black' ]
+instance1.sayName(); // kitty
+instance1.sayAge();  // 22
+
+var instance2 = new SubType('tom',29);
+console.log(instance2.colors); // [ 'red', 'blue', 'green' ]
+instance2.sayName(); // kitty
+instance2.sayAge();  // 29
+
 

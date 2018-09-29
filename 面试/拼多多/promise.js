@@ -38,18 +38,18 @@ getIdPromise.then(function(ids){
 })
 
 
+var list = [];
 axios.post(src1,value)
 .then(function(data){
     if(data.resultCode === '000000'){
-        list.push(data.data);
-        return data;
+        return data.data;
     }else{
         alert(data.resultMsg);
     }
 })
 .then(function(ids){
     ids.map((value) => {
-        axios.post(src1,value)
+        axios.post(src2,value)
         .then(function(data){
             if(data.resultCode === '000000'){
                 list.push(data.data);

@@ -1,0 +1,25 @@
+Http请求头部信息
+1.Accept  浏览器能够处理的内容类型  
+text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+
+2.Accept-Charset 浏览器能够显示的字符集
+
+3.Accept-Encoding 浏览器能够处理的压缩编码
+gzip, deflate, br
+
+4.Accept-Language 浏览器当前设置的语言
+zh-CN,zh;q=0.9,en;q=0.8
+
+5.Connection: 浏览器与服务器之间连接的类型
+keep-alive
+
+6.Cookie: 当前页面设置的任何cookie
+BAIDUID=157BCC7651C97C8F85BA514738956A71:FG=1; BIDUPSID=157BCC7651C97C8F85BA514738956A71; PSTM=1531481283; BD_UPN=123253; BDUSS=dXbXJkVVV0UGtXbG9mTWYxQzc1czlTUXZhdUJSQnhPZWs3LWNwS2NBaUtock5iQVFBQUFBJCQAAAAAAAAAAAEAAADK0npAbG92ZV9saW51eDQ0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIr5i1uK-YtbUF; ispeed_lsm=2; H_PS_PSSID=; MCITY=-179%3A; BDSFRCVID=mIIsJeCCxG3AFg576w_KjU_kV9dQAq7P6Pki3J; H_BDCLCKID_SF=tbkD_C-MfIvhDRTvhCcjh-FSMgTBKI62aKDs_4Jg-hcqEpO9QT-bDnK7jPbvhjDLMJcyBKJnWIQNVfP4h-rTDUThDHt8JT_tJR3eBTrs2Rj_jRTpq4bohjPDytreBtQm05bxohjI5KKbM433yP6lBPPZefOI3R_fLncTBbIbWDcjqR8Zj5A-DjbP; BDORZ=FFFB88E999055A3F8A630C64834BD6D0; delPer=0; BD_CK_SAM=1; PSINO=5; BDRCVFR[dNbMaaA4X3n]=mk3SLVN4HKm; delPer=0; B64_BOT=1; BDSVRTM=0
+
+7.Host: 发出请求的页面所在的域
+www.baidu.com
+
+8.Referer: 发出请求页面的URL
+
+9.User-Agent: 浏览器的用户代理字符串
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36

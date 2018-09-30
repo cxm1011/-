@@ -33,5 +33,5 @@ const obj = {
     arr: [1,3,5]
 }
 
-const res = getObjValue(obj,'aa.bb','arr[2]','arr[1]');
+const res = getObjValue(obj,'aa1.bb','arr[2]','arr[1]');
 console.log(res);

@@ -7,20 +7,23 @@
     <title>Document</title>
 </head>
 <body>
+
     <div>
-        <div style="width: auto">
-        <input style="width:200px"/> 
-        </div>
+        <input style="width: calc(100% - 110px);border:1px solid #000"/> 
+        <button style="width: 100px">search</button>
+    </div>
+    <div>
+        <input style="width: calc(100% - 104px);border:1px solid #000"/> 
         <button style="float:right;width: 100px">search</button>
     </div>
 
     <div style="position: relative;">
-        <input style="margin-right: 100px;" type="text"/>
+        <input style="width: calc(100% - 104px);border:1px solid #000" type="text"/>
         <button style="position: absolute;right: 0;width: 100px">search</button>
     </div>
 
-    <div style="display: inline-flex">
-        <input style="flex-basis: calc(100%-100px)" type="text"/>
+    <div style="display: flex">
+        <input style="flex-basis: calc(100% - 100px);border:1px solid #000" type="text"/>
         <button style="flex-basis: 100px">search</button>
     </div>
 </body>

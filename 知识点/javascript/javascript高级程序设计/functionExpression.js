@@ -21,6 +21,7 @@ function createFun(){
     }
     return res;
 }
+console.log(createFun.name);
 //因为每个函数的作用域链中 都保存着 createFunctions()函数的活动对象，所以它们引用的都是同一个变量 i
 var funArr = createFun();
 // for(var fun of funArr){

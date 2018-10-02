@@ -264,4 +264,17 @@ console.log(instance2.colors); // [ 'red', 'blue', 'green' ]
 instance2.sayName(); // kitty
 instance2.sayAge();  // 29
 
+11.函数表达式
+
+function(){
+    // 会报错。 是因为 JavaScript 将 function 关键字当作一个函数声明的开始，而函 数声明后面不能跟圆括号。然而，函数表达式的后面可以跟圆括号。要将函数声明转换成函数表达式， 12 只要像下面这样给它加上一对圆括号即可
+}()
+
+
+(function(){
+    console.log('函数声明不会报错....');
+})()
+
+初始化未经声明的变量，总是会创建一个全局变量
+
 

@@ -27,3 +27,7 @@ var funArr = createFun();
 // for(var fun of funArr){
 //     fun();
 // }
+
+(function(){
+    console.log('函数声明不会报错....');
+})()

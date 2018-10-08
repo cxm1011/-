@@ -277,4 +277,15 @@ function(){
 
 初始化未经声明的变量，总是会创建一个全局变量
 
+12.web存储机制
+1）sessionStorage
+存储特定于某个会话的数据，也就是该数据只保持到浏览器关闭。
+setItem  getItem
+
+2) globalStorage
+跨越会话存储数据。首先需指定哪些域可以访问该数据
+
+3）localStorage
+与globalStorage不同的是，不能给localStorage指定任何访问规则。数据保留到通过js删除或者是用户清除浏览器缓存
+
 

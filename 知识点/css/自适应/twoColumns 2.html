@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .parent {
+            position: relative;
+            height: 50px;
+        }
+
+        .input {
+            width: 100%;
+            position: absolute;
+            right: 100px;
+        }
+
+        .button {
+            width: 100px;
+            position: absolute;
+            right: 0;
+        }
+
+        .input1 {
+            width: calc(100% - 110px);
+        }
+
+        .button1 {
+            width: 100px;
+        }
+
+        .wrap1 {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        .input_wrap {
+            width: auto;
+            float: left;
+            width: 100%;
+            margin-left: -110px;
+        }
+
+        .input_nomal { 
+            /* width: calc(100% - 110px);            */
+            display: block;
+            margin-left: 110px;
+        }
+        .btn_normal {
+            float: right;
+            width: 100px;
+        }
+
+         .wrap {  
+            clear: both;
+            max-width: 900px;  
+            margin:0 auto;  
+            overflow: hidden;  /*清除浮动，以及隐藏向左移动出去的部分*/
+        }  
+     
+        .content {  
+            float: left;  
+            width: 100%;  
+            margin-left: -310px;  
+            background-color: #eee;  
+        }  
+        .content-inner {  
+            margin-left: 310px;  
+            border: 1px solid green; 
+        }          
+        .sidebar {  
+            float: right;  
+            width: 300px;  
+            height: 500px;
+            background-color: gold;  
+        }  
+        .footer{margin:0 auto;max-width: 900px;height: 100px; background:green;}
+    </style>
+</head>
+<body>
+    <div class='parent'>
+        <input class='input' placeholder="使用绝对定位方法，不过要设置width为100%"/>
+        <button class='button'>确定</button>
+    </div>
+    <div>
+        <input class='input1' placeholder="使用calc方法"/>
+        <button class='button1'>确定</button>
+    </div>
+    <div class='wrap1'>
+        <div class="input_wrap">
+            <input type="text" class='input_nomal' placeholder="margin"/>
+        </div>
+        <button class='btn_normal'>确定</button>
+    </div>
+    <div class="wrap">  
+            <div class="content">  
+                <div class="content-inner">
+                    自适应区,浏览器宽度缩小时文字会自动换行。
+                    <!-- <input style="width:100%" placeholder="你好"/> -->
+                </div>  
+            </div>  
+            <div class="sidebar">固定宽度区(float与margin齐上阵)</div>  
+        </div>       
+        <div class="footer">底部</div>   
+    </div>
+</body>
+</html>

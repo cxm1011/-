@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width:500px;height:200px;background-color:yellow;display:inline-block;">
+
+    </div>
+    <div style="width:1000px;height:200px;background-color:pink;display:inline-block;">
+        <!-- 向右移动，直到外边缘碰到包含框-->
+        <div style="width:300px;height:200px;background-color:black;display:inline-block;float:right">
+        </div>
+
+        <div style="width:300px;height:200px;background-color:blue;display:inline-block;">
+        </div>
+
+        <div style="width:300px;height:200px;background-color:red;display:inline-block">
+        </div>
+    </div>
+
+    <div>
+        <!-- 脱离文档流，会覆盖原先的blue框-->
+        <div style="width:300px;height:200px;background-color:black;float:left">
+        </div>
+
+        <div style="width:300px;height:200px;background-color:blue;">
+        </div>
+
+        <div style="width:300px;height:200px;background-color:red;">
+        </div>
+    </div>
+
+    <!-- 脱离文档流，直到外边缘碰到另一个浮动框的边缘。如果包含块太窄，无法容纳水平排列的三个浮动元素，那么其他浮动块
+        向下移动，直到有足够的空间。-->
+    <!-- <div>
+        <div style="width:300px;height:200px;background-color:black;float:left">
+        </div>
+
+        <div style="width:300px;height:200px;background-color:blue;float:left">
+        </div>
+
+        <div style="width:300px;height:200px;background-color:red;float:left">
+        </div>
+    </div> -->
+
+    <!-- 脱离文档流，直到外边缘碰到另一个浮动框的边缘。如果包含块太窄，无法容纳水平排列的三个浮动元素，那么其他浮动块
+        向下移动，直到有足够的空间。如果浮动元素高度不同，则向下移动时可能会被其他浮动元素"卡住"-->
+    <!-- <div>
+        <div style="width:600px;height:300px;background-color:black;float:left">
+        </div>
+
+        <div style="width:600px;height:200px;background-color:blue;float:left">
+        </div>
+
+        <div style="width:600px;height:200px;background-color:red;float:left">
+        </div>
+    </div> -->
+
+    <div style=" width: 90%;max-width: 900px;">
+        <!-- <div style="width:600px;height:100px;background-color:black;float:left;display:inline-block;">
+        </div> -->
+        <img src="../../图片/1.jpg" style="height:100px;width:300px;float:left;" />
+        
+        <p>中文 lfjkls djfklsdj kfjsdkjfks djfkkjkljlk jksdsdklfj sdklfjklsd jfkl sdj kfjsd kjfks djfkkjkljl kjkjsdsdk lfjsdkl fjklsdjfklsdjkfjsdkjfksdjfkkjkljlkjkjjsdsdklfjsdklfjklsdjfklsdjjhkhkhkhkkfjsdkjfksdjfkkjkljlkjkj</p>
+    </div>
+    
+</body>
+</html>

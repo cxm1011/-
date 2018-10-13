@@ -11,3 +11,9 @@ var arr = ['a','b'];
 for(var val in arr){
     console.log(val);
 }
+
+var obj = {
+    a: '1',
+    b: '2'
+};
+console.log(obj.a)

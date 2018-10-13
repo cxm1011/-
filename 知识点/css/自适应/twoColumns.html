@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .input1 {
+            width: calc(100% - 110px);
+        }
+
+        .button1 {
+            width: 100px;
+            float: right;
+        }
+
+        .parent {
+            position: relative;
+            height: 50px;
+        }
+
+        .div2 {
+            position: absolute;
+            right:100px;
+            height: 20px;
+            width: 100%;
+            background-color: red;
+        }
+
+        .button2 {
+            width: 100px;
+            position: absolute;
+            right: 0;
+        }
+
+         .div3 {
+            height: 20px;
+            margin-left: -110px;  
+            width: 100%;
+            background-color: red;
+            float: left;
+            
+        }
+
+        .button3 {
+            width: 100px;
+            float:right;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <input class='input1' placeholder="使用calc方法(行内元素只能使用calc计算width来控制宽度)"/>
+        <button class='button1'>确定</button>
+    </div>
+
+    <div class='parent'>
+        <div class='div2'></div>
+        <button class='button2'>确定</button>
+    </div>
+
+    <div>
+        <!-- 注意一定要margin-left，而不能使用margin-right.因为margin-right时，盒子还时存在，button上不去-->
+        <div class='div3'></div>
+        <button class='button3'>确定</button>
+    </div>
+
+
+    
+</body>
+</html>

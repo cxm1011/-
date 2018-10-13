@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div1 {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            background-color: black;
+        }
+
+        .div2 {
+            width: calc(100% - 311px);
+            height: 100px;
+            display: inline-block;
+            background-color: yellow;
+        }
+
+        .div3 {
+            width: 200px;
+            height: 100px;
+            display: inline-block;
+            background-color: red;
+        }
+
+        .div4 {
+            width: 100px;
+            height: 100px;
+            /* display: inline-block; */
+            background-color: black;
+            float: left;
+        
+        }
+
+        .div5 {
+            /* width: calc(100% - 311px); */
+            width: 100%;
+            height: 100px;
+            /* display: inline-block; */
+            background-color: yellow;
+            /* padding: 0 200px 0 100px; */
+            
+        }
+
+        .div6 {
+            width: 200px;
+            height: 100px;
+            /* display: inline-block; */
+            background-color: red;
+            float: right;
+            /* margin-left: -200px */
+        }
+
+        .input {
+            /* width: 100%; */
+            margin:0 300px 0 100px;
+            height:100px;
+            background-color: pink;
+        }
+
+        .parent789 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .div7 {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            background-color: black;
+        }
+
+        .div8 {
+            width: 100%;
+            height: 100px;
+            display: inline-block;
+            background-color: yellow;
+        }
+
+        .div9 {
+            width: 200px;
+            height: 100px;
+            display: inline-block;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class='div1'></div>
+        <div class='div2'></div>
+        <div class='div3'></div>
+    </div>
+
+    <div>  
+        <div class='div4'></div>
+        <div class='div6'></div>
+        <div class='div5'>
+            <!-- <input class='input'/> -->
+            <div class='input'></div>
+        </div>
+        
+    </div>
+
+    <div class="parent789">
+        <div class='div7'></div>
+        <div class='div8'></div>
+        <div class='div9'></div>
+    </div>
+    
+</body>
+</html>

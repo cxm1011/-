@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div1 {
+            width: 400px;
+            height: 100px;
+            float: left;
+            background-color:red;
+        }
+
+        .div2 {
+            width: 400px;
+            height: 100px;
+            float: left;
+            background-color:blue;
+        }
+
+        .div3 {
+            width: 400px;
+            height: 100px;
+            float: left;
+            background-color:yellow;
+        }
+
+        .noFloat {
+            width: 50px;
+            height: 50px;
+            background-color:black;
+            clear: both;  /*清除浮动*/
+        }
+
+        .div4 {
+            width: 400px;
+            height: 150px;
+            float: left;
+            background-color:red;
+        }
+
+        .div5 {
+            width: 400px;
+            height: 100px;
+            float: left;
+            background-color:blue;
+        }
+
+        .div6 {
+            width: 400px;
+            height: 100px;
+            float: left;
+            background-color:yellow;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!--如果包含块太窄，无法容纳水平排列的3个浮动元素，那么其它浮块向下移动，直到有足够空间的地方 -->
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+
+    <div class="noFloat">
+        <div></div>
+    </div>
+    
+    <!--如果高度不一致，则会出现“卡住”情形 -->
+    <div class="div4"></div>
+    <div class="div5"></div>
+    <div class="div6"></div>
+
+</body>
+</html>

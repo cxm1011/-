@@ -288,4 +288,12 @@ setItem  getItem
 3）localStorage
 与globalStorage不同的是，不能给localStorage指定任何访问规则。数据保留到通过js删除或者是用户清除浏览器缓存
 
+13.Object的每个实例都有的属性和方法
+* constructor: 保存着用于创建当前对象的函数。
+* hasOwnProperty(propertyName):用于检查给定的属性在当前对象实例中(而不是在实 例的原型中)是否存在。其中，作为参数的属性名(propertyName)必须以字符串形式指定(例 如:o.hasOwnProperty("name"))。
+* isPrototypeOf(object):用于检查传入的对象是否是当前对象的原型(第 5 章将讨论 原型)。
+* propertyIsEnumerable(propertyName):用于检查给定的属性是否能够使用for-in语 句(本章后面将会讨论)来枚举。
+* toLocaleString():返回对象的字符串表示，该字符串与执行环境的地区对应。
+* toString():返回对象的字符串表示。
+* valueOf():返回对象的字符串、数值或布尔值表示。通常与 toString()方法的返回值相同。
 

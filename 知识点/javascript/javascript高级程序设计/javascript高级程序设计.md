@@ -32,9 +32,56 @@ ECMAScript 中有两种属性:数据属性和访问器属性
 把新值保存在这个位置。这个特性的默认值为 undefined。
 
 要修改属性默认的特性，需使用Object.defineProperty()方法。这个方法 接收三个参数:属性所在的对象、属性的名字和一个描述符对象
+eg:
+var person = {};
+Object.defineProperty(person, "name", {
+    writable: false,
+    value: "Nicholas"
+});
+alert(person.name); //"Nicholas" 
+person.name = "Greg"; 
+alert(person.name); //"Nicholas"
 
 2) 访问器属性
  getter 和 setter 函数
+
+创建对象
+工厂模式
+function createPerson(name, age, job){
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.job = job;
+    o.sayName = function(){
+        alert(this.name);
+    };
+    return o; 
+}
+var person1 = createPerson("Nicholas", 29, "Software Engineer"); 
+var person2 = createPerson("Greg", 27, "Doctor");
+
+构造函数模式
+ function Person(name, age, job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.sayName = function(){
+        alert(this.name);
+    }; 
+}
+var person1 = new Person("Nicholas", 29, "Software Engineer");
+var person2 = new Person("Greg", 27, "Doctor");
+要创建 Person 的新实例，必须使用 new 操作符。以这种方式调用构造函数实际上会经历以下 4 个步骤:
+(1) 创建一个新对象;
+(2) 将构造函数的作用域赋给新对象(因此 this 就指向了这个新对象);
+(3) 执行构造函数中的代码(为这个新对象添加属性);
+(4) 返回新对象。
+
+alert(person1 instanceof Object);  //true
+alert(person1 instanceof Person);  //true
+alert(person2 instanceof Object);  //true
+alert(person2 instanceof Person);  //true
+创建自定义的构造函数意味着将来可以将它的实例标识为一种特定的类型;而这正是构造函数模式 胜过工厂模式的地方
 
 3.使用构造函数问题
 使用构造函数的主要问题，就是每个方法都要在每个 实例上重新创建一遍。在前面的例子中，person1 和 person2 都有一个名为 sayName()的方法，但那 两个方法不是同一个 Function 的实例

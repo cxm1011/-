@@ -16,3 +16,6 @@ function output(){
     console.log(a);
 }
 output();
+
+console.log("hello"+(1<2)?"world":"world2");
+console.log("hello"+(1<2))

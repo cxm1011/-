@@ -17,3 +17,10 @@ var obj = {
     b: '2'
 };
 console.log(obj.a)
+
+console.log(null == undefined);  // true
+console.log(null === undefined); // false
+console.log(typeof(new Object()) === typeof(null))  // true
+console.log(new Number('1') == 1)  // true
+console.log(new Number('1') === 1)  // false
+console.log(new Boolean() == false)  // true

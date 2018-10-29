@@ -44,9 +44,20 @@ var foreachRes = arr1.forEach(function(value,index,arr1){
 
 console.log('********');
 let arr2 = [1,3,5,7,9];
-arr2.splice(2,2);
+arr2.splice(2,2,1,2);
 console.log(arr2);
 arr2.concat('1');
 console.log(arr2);
 console.log(arr2.slice(1,2));
 console.log(arr2);
+
+console.log(Array.isArray(arr2));
+console.log(arr2 instanceof Array);
+console.log(Object.prototype.toString(arr2));
+console.log(arr2.__proto__ === Array.prototype)
+
+function f(){
+
+}
+let f1 = new f();
+console.log(f1.__proto__ === f.prototype)

@@ -61,3 +61,14 @@ function f(){
 }
 let f1 = new f();
 console.log(f1.__proto__ === f.prototype)
+
+
+// reduce
+let reduceArr = [1,2,3,4,5];
+let res = reduceArr.reduce((total,num,index,arr) => {
+    console.log(total);
+    console.log(index);
+    console.log(arr);
+    return total+num;
+},0);
+console.log(res);

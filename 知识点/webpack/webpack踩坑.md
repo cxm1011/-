@@ -85,3 +85,13 @@ require('style-loader!css-loader?minimize!./main.css');
 11.
 resolve:
 配置webpack如何寻找模块所对应的文件
+
+12.优化
+从两个角度
+1）优化开发体验
+优化构建速度
+优化使用体验。通过自动化完成一些重复的工作
+
+2）优化输出质量
+减少用户能感知到的加载时间
+提升流畅度

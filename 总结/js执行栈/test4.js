@@ -30,11 +30,11 @@ async1();
 new Promise(function (resolve){
     console.log('f');
     resolve();
-    // pro2
+    // pro2then1
 }).then(function then3(){
     console.log('g');
+    // pro2then2
 }).then(function then4(){
     console.log('m');
 });
-
 console.log('h');

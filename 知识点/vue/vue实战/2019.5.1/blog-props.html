@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <blog-post title='123' :post-font-size="postFontSize" v-on:add="addFontSize"></blog-post>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        Vue.component('blog-post',{
+            props: ['title','postFontSize'],
+            template: `<div>
+                <h3 :style="{fontSize: postFontSize+'px'}">{{title}}</h3>
+                <button v-on:click="$emit('add',2)">add font size</button>
+                <h3>123{{postFontSize}}</h3>
+            </div>`
+        })
+
+        new Vue({
+            el: '#app',
+            data: {
+                postFontSize: 1,
+            },
+            methods: {
+                // emit第二个参数是可以接收到的
+                addFontSize: function(addFont){
+                    console.log('addFont',addFont)
+                    this.postFontSize+=1;
+                    console.log('this.postFontSize',this.postFontSize)
+                }
+            }
+        })
+
+        
+    </script>
+</body>
+</html>

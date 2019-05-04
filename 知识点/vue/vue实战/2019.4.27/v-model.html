@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+       <input type="text" v-model="name" placeholder="your name" />
+       <input v-model.number="age" type="number">
+       <h1>您好, {{name}}</h1>
+       <button v-on:click = 'testAge'>click</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                name:'123',
+                age: ''
+            },
+            mounted: function(){
+                var that = this;
+                this.timer = setTimeout(() => {
+                    that.name = new Date();
+                },1000);
+            },
+            methods: {
+                testAge : function(){
+                    console.log(typeof(this.age))
+                }
+            }
+        })
+        console.log('app $el',app.$el)
+        console.log('app data',app.name)
+        app.name = 'app';
+    </script>
+</body>
+</html>

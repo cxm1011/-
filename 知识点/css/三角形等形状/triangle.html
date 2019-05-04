@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .demo {
+            width: 100px;
+            height: 100px;
+            border: 20px solid;
+            border-color: blue red;
+        }
+
+        .demo1 {
+            width: 0;
+            height: 0;
+            border: 100px solid;
+            border-color: blue red;
+        }
+
+        .trianale {
+            width: 0;
+            height: 0;
+            border: 100px solid transparent;
+            border-bottom: red 100px solid;
+        }
+
+        .dengbian {
+            width: 0;
+            height: 0;
+            border: 100px solid transparent;
+            /* border-bottom 指高度，等边的高度计算：(100*2)*(跟号3/2)  100*2指底边的长度 */
+            border-bottom: red 177.2px solid;
+        }
+
+        .zhijiao {
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-bottom: red 100px solid;
+        }
+
+        .trianale1 {
+            width: 0;
+            height: 0;
+            border-width: 100px 100px 100px 0;
+            border-color:transparent;
+            border-right-color: red;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <div class='demo'></div>
+    <div class='demo1'></div>
+    <div class="trianale"></div>
+    <div class="dengbian"></div>
+    <div class="zhijiao"></div><br />
+    <div class="trianale1"></div>
+</body>
+</html>

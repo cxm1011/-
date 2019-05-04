@@ -1,44 +1,39 @@
-console.log('1');
-
+console.log('a');
 // set1
 setTimeout(function(){
-    console.log('2');
-    // set4
+    console.log('b');
+    // set2
     setTimeout(function(){
-        console.log('3');
+        console.log('c');
     },0)
-
-    // pro2
     new Promise(function(resolve){
-        console.log('4');
+        console.log('d');
         resolve();
+        // pro1
     }).then(function(){
-        console.log('5');
+        console.log('e');
     })
 },0)
-
-//pro1
 new Promise(function(resolve){
-    console.log('6');
+    console.log('f');
     resolve();
+    //pro2
 }).then(function(){
-    console.log('7');
+    console.log('g');
     // set3
     setTimeout(function(){
-        console.log('8');
+        console.log('h');
     },0)
 })
-
-// set2
+// set4
 setTimeout(function(){
-    console.log('9');
-
-    // pro3
+    console.log('i');
     new Promise(function(resolve){
-        console.log('10');
+        console.log('j');
         resolve();
+        // pro3
     }).then(function(){
-        console.log('11');
+        console.log('k');
     })
 },0)
 

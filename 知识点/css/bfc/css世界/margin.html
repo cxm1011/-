@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .father {
+            overflow: hidden;
+        }
+
+        .top {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-bottom: 50px;
+        }
+
+        .bottom {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin-top: 100px;
+        }
+
+        .left {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-right: 50px;
+            display: inline-block;
+        }
+
+        .right {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-left: 100px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 上下子元素合并解决方法  外层套个父元素，形成bfc-->
+    <div class="father">
+        <div class="top">
+        </div>
+    </div>
+    <div class="father">
+        <div class="bottom">
+        </div>
+    </div>
+
+    <!-- 左右margin不发生合并，因为此时已经使用display: inline-block形成bfc了-->
+    <div class="left">
+    </div>
+    <div class="right">
+    </div>
+</body>
+</html>

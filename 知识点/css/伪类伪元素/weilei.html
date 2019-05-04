@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* ul>:first-child {
+            color: red;
+        } */
+
+        /* ul>:first-of-type {
+            color: blue;
+        } */
+
+        a:link {
+            color: yellow
+        }
+        a:visited {
+            color: red
+        }
+        a:hover {
+            color: blue
+        }
+        a:active {
+            color: navy
+        }
+
+        input:hover {
+            background-color: red
+        }
+
+        input:focus {
+            background-color: blue
+        }
+
+        a:link:hover{
+            color: blue;
+        }
+
+        p::first-letter {
+            color: red;
+        }
+
+        p::first-line {
+            font-size: 200%;
+        }
+        p::before {
+            content: '*';
+            color: blue;
+        }
+        p::after {
+            content: '&';
+            color: green;
+        }
+        ul :nth-child(even) {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>我是第一个</li>
+        <li>我是第二个<span>span标签第一个</span></li>
+        <li>我是第三个<span>span标签第二个</span></li>
+    </ul>
+
+    <ul>
+        <li>我是第一个</li>
+        <li>我是第二个</li>
+        <li>我是第三个</li>
+        <li>我是第四个</li>
+        <li>我是第五个</li>
+        <li>我是第六个</li>
+    </ul>
+    <a href="http://www.baidu.com">百度一下</a>
+    <a href="http://www.baidu.com">百度二下</a>
+    <input >
+    <p>abc <br> qwe</p>
+    <p>def</p>
+</body>
+</html>

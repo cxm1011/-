@@ -95,3 +95,42 @@ resolve:
 2）优化输出质量
 减少用户能感知到的加载时间
 提升流畅度
+
+13.babel
+配置类似下面：
+{
+    "plugins": [
+        [
+            "transform-runtime",{
+                "polyfill": false
+            }
+        ]
+    ],
+    "presents": [
+        [
+            "es2015",{
+                "modules": false
+            }
+        ],
+        "stage-2",
+        "react"
+    ]
+}
+plugins属性：
+  告诉Babel要使用哪些插件，这些插件可以控制如何转换代码。
+  babel-pluigin-transform-runtime作用减少冗余的代码，减少Babel编译出来的代码的文件大小。但需和babel-runtime配套使用。
+presents属性：
+  告诉Babel要转换的源码使用了哪些新的语法特性。如ES2015,ES2016,ES2017,ENV（包含当前所有ECMAScript标准里的最新特性）
+
+webpack中使用：
+  rules: [
+            {
+                test: /\.js$/,
+                use: [babel-loader]
+            }
+        ]
+
+
+
+
+

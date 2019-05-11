@@ -37,6 +37,24 @@
             left:calc(50% - 50px);
         }
 
+        .parent21 {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+            position: relative;
+            background-color: red;
+        }
+
+        .child21 {
+            width: 100px;
+            height: 50px;
+            background-color: blue;
+            /* margin: 0 auto; */
+            position: absolute;
+            left:50%;
+            transform: translateX(-50%);  /* 可以在不知道元素宽度下移动 */
+        }
+
         .parent3 {
             width: 100%;
             height: 50px;
@@ -69,6 +87,24 @@
             left:calc(50% - 10px);
         }
 
+        .parent41 {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+            background-color: red;
+            position: relative;
+        }
+
+        .child41 {
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+
         .parent5 {
             width: 100px;
             height: 100px;
@@ -97,6 +133,11 @@
         <div class='child2'></div>
     </div>
 
+    <!-- 相对和绝对定位方式2-->
+    <div class="parent21">
+        <div class='child21'></div>
+    </div>
+
      <!-- flex方式 -->
     <div class="parent3">
         <div class='child3'></div>
@@ -105,6 +146,11 @@
     <!-- 水平垂直方法1  定位方式-->
     <div class="parent4">
         <div class='child4'></div>
+    </div>
+
+     <!-- 水平垂直方法1  定位方式-->
+     <div class="parent41">
+        <div class='child41'></div>
     </div>
 
     <!-- 水平垂直方法2  flex方式-->

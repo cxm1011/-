@@ -3,19 +3,19 @@ console.log(1)
 // set1
 setTimeout(() => {
   console.log(2)
-  // pro1
   new Promise(resolve => {
     console.log(4)
     resolve()
+    // pro1
   }).then(() => {
     console.log(5)
   })
 })
 
-// pro2
 new Promise(resolve => {
   console.log(7)
   resolve()
+  // pro2
 }).then(() => {
   console.log(8)
 })

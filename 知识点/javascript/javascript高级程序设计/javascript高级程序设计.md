@@ -8,6 +8,7 @@ person.job = "Software Engineer";
 person.sayName = function(){
     alert(this.name);
 };
+缺点：使用同一个接口创建很多对象，会产生大量的重复代码。
 
 2）对象字面量成为创建这种对象的首选模式
 var person = {
@@ -59,6 +60,7 @@ function createPerson(name, age, job){
 }
 var person1 = createPerson("Nicholas", 29, "Software Engineer"); 
 var person2 = createPerson("Greg", 27, "Doctor");
+缺点：虽然解决了创建多个相似对象会有重复代码的问题，但却没有解决对象识别的问题。
 
 构造函数模式
  function Person(name, age, job){
@@ -71,6 +73,8 @@ var person2 = createPerson("Greg", 27, "Doctor");
 }
 var person1 = new Person("Nicholas", 29, "Software Engineer");
 var person2 = new Person("Greg", 27, "Doctor");
+缺点：每个方法都要在实例上创建一遍，上例中person1的sayName方法和person2的sayName不是同一个实例。
+
 要创建 Person 的新实例，必须使用 new 操作符。以这种方式调用构造函数实际上会经历以下 4 个步骤:
 (1) 创建一个新对象;
 (2) 将构造函数的作用域赋给新对象(因此 this 就指向了这个新对象);
@@ -262,7 +266,8 @@ function SuperType(){
     this.colors = ['red','blue','green'];
 }
 function SubType(){
-    SuperType.call(this);
+    SuperType.call(this);  //改变this指向 当创建子类实例时，this指的是实例对象，因此每一个实例对象都会
+                            //有不同的引用
 }
 
 var instance1 = new SubType();

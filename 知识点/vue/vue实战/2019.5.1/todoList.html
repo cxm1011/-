@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <form v-on:submit.prevent = 'addNewTodo' >
+            <label for="new-todo">Add a todo</label>
+            <input v-model='newTodoText' id='new-todo' />
+            <button>Add</button>
+        </form>
+        <ul>
+            <li is='todo-item'
+                v-for='(todo,index) in todos'
+                v-bind:title = 'todo.title' 
+                v-on:remove = 'todos.splice(index,1)'
+                v-bind:key = 'todo.id'
+            ></li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        Vue.component('todo-item',{
+            template: `<li>
+                {{title}}
+                <button v-on:click="$emit(\'remove\')">Remove</button>
+                </li>`,
+            props: ['title']
+        })
+
+        new Vue({
+            el: '#app',
+            data: {
+                newTodoText: '',
+                todos: [
+                    {
+                        id: 1,
+                        title: 'Do the dishes',
+                    },
+                    {
+                        id: 2,
+                        title: 'Take out the trash',
+                    },
+                    {
+                        id: 3,
+                        title: 'Mow the lawn'
+                    }
+                ],
+            },
+            methods: {
+                addNewTodo: function() {
+                    this.todos.push({
+                        id: this.todos.length+1,
+                        title: this.newTodoText
+                    })
+                    this.newTodoText = ''
+                }
+            }
+        })
+    </script>
+</body>
+</html>

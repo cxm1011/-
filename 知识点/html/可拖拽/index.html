@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+       #draggable {
+           width: 20%;
+           height: 20%;
+           background: yellow;
+           position: absolute;
+
+       }
+    </style>
+</head>
+<body>
+    <div id="draggable" >drag me</div>
+    <script>
+        var dragSrc = document.getElementById('draggable')
+        dragSrc.setAttribute('draggable','true')
+        var oldLeft = 0;
+        var oldTop = 0;
+        dragSrc.ondragstart = handle_start;
+        // dragSrc.ondrag = handle_drag;
+        dragSrc.ondragend = handle_end
+        function handle_start(e) {
+          oldLeft = e.offsetX;
+          oldTop = e.offsetY;
+          console.log('dragstart-在元素开始被拖动时候触发',e);
+        }
+
+        function handle_end(e) {
+          console.log('dragstart-在元素开始被拖动时候触发',e);
+          dragSrc.style.left = e.clientX - oldLeft + 'px';
+          dragSrc.style.top =  e.clientY - oldTop  + 'px';
+          oldLeft = e.clientX;
+          oldTop = e.clientY;
+        }
+
+    </script>
+</body>
+</html>

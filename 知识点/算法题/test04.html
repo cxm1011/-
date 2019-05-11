@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // var timer = null;
+        // function debounce(fn, value,delay = 2000) {
+        //     clearTimeout(timer); 
+        //     timer = setTimeout(() => {
+        //         fn(value);
+        //     }, delay);
+        // }
+        
+        function debounce2(fn, delay = 2000) {
+            var timer;
+            return function () { 
+                var context = this;
+                var args = arguments;
+                console.log(timer);
+                timer && clearTimeout(timer)
+                timer = setTimeout(function () {
+                    fn.apply(context, args);
+                }, delay);
+            }
+        }
+        function handleInput(){
+            var value = document.getElementById("input").value;
+            debounce2(() => {
+                console.log('click',value)
+            },300)(value);
+            // debounce(requestA,value,300);
+        }
+
+        // function requestA(value) {
+        //     console.log('click',value)
+        // }
+
+        const requestA = (value) =>{
+            console.log('click',value)
+        }
+    </script>
+</head>
+<body>
+    <input id="input" oninput="handleInput()"/>
+</body>
+</html>

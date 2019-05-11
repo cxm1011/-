@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #id {
+            width: 100%;
+            height: 100%;
+        }
+
+        .jingdong {
+            width: 100px;
+            height: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id = 'root'>
+        <a class= 'jingdong' src='www.jingdong.com' >jingdong</a>
+        <a class= 'baidu' src='www.baidu.com' >baidu</a>
+    </div>
+
+    <script>
+        var newDiv = document.createElement('div');
+        var root = document.getElementById('root');
+        var baidu = document.querySelector('.baidu');
+        root.appendChild(newDiv);
+        newDiv.appendChild(baidu);
+    </script>
+</body>
+</html>

@@ -18,18 +18,21 @@ function getValue(name,age){
 Function.prototype.myCall = function(context) {
     var context = context || window;
     context.fn = this;
+    console.log('myCall arguments',arguments)
     let args = [...arguments].slice(1);  //空数组的slice(1)返回空数组，对空数组解构赋值不报错
+    console.log('myCall arguments',args)
     let result = context.fn(...args); // 对空数组解构赋值不报错。所以不需要判断
     delete context.fn;
     return result;
 }
 
-getValue.myCall(a);
+getValue.myCall(a,'cxm','27');
 
 Function.prototype.myApply = function(context){
     var context = context || window;
     context.fn = this;
-    // let result;
+    let result;
+    // 因为apply参数是一个数组，对数组结构首先需要拿到数组，所以要进行arguments[1]操作
     // arguments[1]有可能是undefined.对undefined解构赋值会报错。所以要加上判断
     // 首先得拿到数组中的所有值。与call不同
     if(arguments[1]){
@@ -41,7 +44,7 @@ Function.prototype.myApply = function(context){
     delete context.fn;
     return result;
 }
-getValue.myApply(a,['a']);
+getValue.myApply(a,['a','27']);
 
 Function.prototype.myBind = function(context){
     if(typeof this !== 'function'){

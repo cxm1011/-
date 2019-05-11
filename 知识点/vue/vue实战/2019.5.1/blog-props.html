@@ -17,7 +17,11 @@
             props: ['title','postFontSize'],
             template: `<div>
                 <h3 :style="{fontSize: postFontSize+'px'}">{{title}}</h3>
+<<<<<<< HEAD
                 <button v-on:click="$emit('add')">add font size</button>
+=======
+                <button v-on:click="$emit('add',2)">add font size</button>
+>>>>>>> 696fba02516c46d95acf9ef90f5dd73297f57704
                 <h3>123{{postFontSize}}</h3>
             </div>`
         })
@@ -28,7 +32,13 @@
                 postFontSize: 1,
             },
             methods: {
+<<<<<<< HEAD
                 addFontSize: function(){
+=======
+                // emit第二个参数是可以接收到的
+                addFontSize: function(addFont){
+                    console.log('addFont',addFont)
+>>>>>>> 696fba02516c46d95acf9ef90f5dd73297f57704
                     this.postFontSize+=1;
                     console.log('this.postFontSize',this.postFontSize)
                 }
